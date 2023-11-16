@@ -9,14 +9,13 @@ const GameGrid = () => {
   const { error, games, isLoading } = useGames();
 =======
 import useGames from "../hooks/useGames";
-import { Genre } from "../hooks/useGenres";
-import { Platform } from "../hooks/usePlatform";
+import { GameQuery } from "../App";
 
 interface Props {
-  selectedGenre: Genre | null;
-  selectedPlatform: Platform | null;
+  gameQuery: GameQuery;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 const GameGrid = ({ selectedGenre }: Props) => {
   const { error, data, isLoading } = useGames(selectedGenre);
@@ -25,6 +24,10 @@ const GameGrid = ({ selectedGenre }: Props) => {
 const GameGrid = ({ selectedGenre, selectedPlatform }: Props) => {
   const { data, error, isLoading } = useGames(selectedGenre, selectedPlatform);
 >>>>>>> f4a360d (filtering game by platform)
+=======
+const GameGrid = ({ gameQuery }: Props) => {
+  const { data, error, isLoading } = useGames(gameQuery);
+>>>>>>> 01b2028 (Refactor: Extracting query objects)
   const skeletons = [1, 2, 3, 4, 5, 6];
 
   return (
