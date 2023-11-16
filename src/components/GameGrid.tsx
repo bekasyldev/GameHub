@@ -10,14 +10,21 @@ const GameGrid = () => {
 =======
 import useGames from "../hooks/useGames";
 import { Genre } from "../hooks/useGenres";
+import { Platform } from "../hooks/usePlatform";
 
 interface Props {
   selectedGenre: Genre | null;
+  selectedPlatform: Platform | null;
 }
 
+<<<<<<< HEAD
 const GameGrid = ({ selectedGenre }: Props) => {
   const { error, data, isLoading } = useGames(selectedGenre);
 >>>>>>> 87f9f34 (filter game by genre)
+=======
+const GameGrid = ({ selectedGenre, selectedPlatform }: Props) => {
+  const { data, error, isLoading } = useGames(selectedGenre, selectedPlatform);
+>>>>>>> f4a360d (filtering game by platform)
   const skeletons = [1, 2, 3, 4, 5, 6];
 
   return (
