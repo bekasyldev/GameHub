@@ -12,7 +12,7 @@ interface Props {
 const GameGrid = ({ gameQuery }: Props) => {
   const { error, data, isLoading } = useGames(gameQuery);
   const skeleton = [1, 2, 3, 4, 5, 6];
-  if (error && error !== "cancelled") {
+  if (error && error !== "canceled") {
     return <Text>{error}</Text>;
   }
 
