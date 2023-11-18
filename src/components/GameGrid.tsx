@@ -29,6 +29,9 @@ const GameGrid = ({ gameQuery }: Props) => {
   const { data, error, isLoading } = useGames(gameQuery);
 >>>>>>> 01b2028 (Refactor: Extracting query objects)
   const skeletons = [1, 2, 3, 4, 5, 6];
+  if (error && error !== "canceled") {
+    return <Text>{error}</Text>;
+  }
 
   return (
     <>
@@ -44,15 +47,9 @@ const GameGrid = ({ gameQuery }: Props) => {
               <GameCardSkeleton />
             </GameCardContainer>
           ))}
-<<<<<<< HEAD
-        {games.map((game) => (
-          <GameCardContainer>
-            <GameCard key={game.id} game={game} />
-=======
         {data.map((game) => (
           <GameCardContainer key={game.id}>
             <GameCard game={game} />
->>>>>>> 87f9f34 (filter game by genre)
           </GameCardContainer>
         ))}
       </SimpleGrid>
